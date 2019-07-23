@@ -12,7 +12,7 @@ conf=../pcbas/${name}.prop
 echo -e "JK_PCBA\tJK_PROJECT\tJK_CHOICE" > $conf   # -e 来解析\t
 
 for pcba in $(ls $1/pcba/); do
-	if [[ "$pcba" = "tools" ]]; then
+	if [[ "$pcba" = "tools" ]] || [[ ! -d $1/pcba/$pcba ]]; then
 		continue
 	fi
     for project in $(ls $1/pcba/$pcba); do
