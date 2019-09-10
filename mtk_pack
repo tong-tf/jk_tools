@@ -154,7 +154,9 @@ if [ ! -e $out_mid/items.ini ] ; then
     cp -v $pcba_folder/items.ini $out_mid/
 fi
 pack_img $mid_project  $folder_name zip
-
+if [ -e $out_mid/target_files-package.zip ]; then
+	cp -v $out_mid/target_files-package.zip ../ROM/$folder_name-OTA.zip
+fi
 
 
 
