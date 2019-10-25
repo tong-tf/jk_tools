@@ -3,7 +3,9 @@ echo "Welcome to JENKINS compile system"
 #rm -rf out;
 . build/envsetup.sh
 lunch  $1
+rm -rf out/target/product/tb8176p1_64_bsp/obj/ETC/system_build_prop_intermediates/
 echo "MTK or other build, just make only"
+make installclean;
 make -j24
 if [ $? -eq 0 ]; then
 	echo "Build Finish ^_^"
