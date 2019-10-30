@@ -11,5 +11,26 @@ client:
     camera: OV5648
     build: Userdebug
     loader: v2.36
-
+  -
+    name: bnd
+    android: O
+    cpu: RK3288
+    pcba: RC02
+    lcm: 7-jd9366-BOE
+    tp: TP-YH0273
+    wifi: RTL8822CS
+    camera: OV5648
+    build: Userdebug
+    loader: v2.36
+  -
+    name: bnd
+    android: O
+    cpu: RK3399
+    pcba: H100
+    lcm: 101-OTA7290B-BOE
+    tp: TP-WJ
+    wifi: AP6255
+    camera: OV5648+GC2145
+    build: Userdebug
+    loader: v1.19
 
