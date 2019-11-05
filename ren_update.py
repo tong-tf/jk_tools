@@ -32,8 +32,12 @@ def main(args):
 	for client in data['client']:
 	    if client['name'] ==  name and client['cpu'] == cpu.upper() :
 	        rv = '_'.join(client.values())
-	        rv = check_output(['cp', '-v', f'rockdev/Image-{prj}/update.img',
-	        	f'../ROM/{rv}-{datetime.now().strftime("%Y%m%d")}.img'])
+	        src = f'rockdev/Image-{prj}/update.img'
+	        dest = f'../ROM/{rv}-{datetime.now().strftime("%Y%m%d")}.img'
+	        rv = check_output(['cp', '-v', src, dest])
+	        if rv:
+	        	print(rv.decode('utf8'))
+	        rv = check_output(['zip', '-9', f'{dest}.zip', dest])
 	        if rv:
 	        	print(rv.decode('utf8'))
 
