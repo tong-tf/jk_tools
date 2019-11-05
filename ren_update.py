@@ -38,4 +38,4 @@ def main(args):
 	        	print(rv.decode('utf8'))
 
 if __name__ == '__main__':
-	main(docopt(doc=__doc__))
+	main(docopt(__doc__))
